@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -29,11 +30,15 @@ public class Hooks {
             case "firefox":
                 driver.set(new FirefoxDriver());
                 break;
+            case "edge":
+                driver.set(new EdgeDriver());
             default:
                 throw new IllegalArgumentException("Browser not supported: " + browser);
         }
 
         getDriver().manage().window().maximize();
+        getDriver().manage().deleteAllCookies();
+        getDriver().get("https://www.saucedemo.com");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 

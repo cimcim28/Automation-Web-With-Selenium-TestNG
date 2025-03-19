@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="15.479" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-19T01:56:29.922637Z">
+<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="14.951">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website...............................................passed
+When Buyer add product to Cart and checkout.................................passed
+And Buyer add checkout information..........................................passed
+Then Buyer will see message overview order and on finish order..............passed
+Then Buyer confirmation page THANKYOU FOR THE ORDER.........................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -20,7 +20,6 @@ public class LoginPage extends AbstractComponent { // Extend AbstractComponent
 
     public LoginPage(WebDriver driver) {
         super(driver); // Inisialisasi AbstractComponent
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

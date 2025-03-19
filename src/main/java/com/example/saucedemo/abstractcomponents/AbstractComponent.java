@@ -16,7 +16,7 @@ public class AbstractComponent {
     }
 
     // Method untuk menunggu visibility element (menggunakan WebElement)
-    protected void waitForElementVisibility(WebElement element) {
+    public void waitForElementVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(element));
     }

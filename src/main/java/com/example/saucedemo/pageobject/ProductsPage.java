@@ -2,6 +2,7 @@ package com.example.saucedemo.pageobject;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,7 @@ public class ProductsPage extends AbstractComponent {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "[data-test='title']")
+    @FindBy(css = "span.title")
     private WebElement pageTitle;
 
     @FindBy(className = "inventory_item")
@@ -32,7 +33,8 @@ public class ProductsPage extends AbstractComponent {
     public WebElement buttonCart;
 
     public String getPageTitle() {
-        return pageTitle.getText();
+        waitForElementVisibility(pageTitle);  // 🔥 Tunggu elemen muncul
+        return pageTitle.getText().trim();
     }
 
     public List<WebElement> getInventoryItemNames() {
@@ -49,9 +51,15 @@ public class ProductsPage extends AbstractComponent {
     }
 
     public void addToCart(String productName) {
-        WebElement product = getProductByName(productName);
-        if (product != null) {
-            product.click();
+    for (WebElement item : inventoryItems) {
+        WebElement nameElement = item.findElement(By.className("inventory_item_name"));
+        if (nameElement.getText().equalsIgnoreCase(productName)) {
+            WebElement addToCartButton = item.findElement(By.cssSelector(".btn_inventory")); // 🔥 Cari tombol Add to Cart dalam produk yang sesuai
+            addToCartButton.click();
+            System.out.println("✅ Produk '" + productName + "' berhasil ditambahkan ke keranjang.");
+            return;
         }
+    }
+    System.out.println("❌ Produk '" + productName + "' tidak ditemukan.");
     }
 }

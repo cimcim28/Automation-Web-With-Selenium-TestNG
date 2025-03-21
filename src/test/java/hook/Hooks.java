@@ -1,10 +1,9 @@
 package hook;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -12,25 +11,17 @@ public class Hooks {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     @Before
-    public void setup() {
-        if (driver.get() == null) {
-            System.out.println("🔧 Initializing WebDriver...");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--no-sandbox");
-            driver.set(new ChromeDriver(options));
-        }
-
-        if (driver.get() == null) {
-            throw new IllegalStateException("🚨 ERROR: WebDriver is still null after setup!");
-        }
-
-        getDriver().manage().window().maximize();
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public static void setUp() {
+        System.out.println("🔧 Cucumber setup...");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver.set(new ChromeDriver(options));
+        driver.get().manage().window().maximize();
+        driver.get().get("https://www.saucedemo.com/");
     }
 
     @After
-    public void tearDown() {
+    public static void tearDown() {
         if (driver.get() != null) {
             driver.get().quit();
             driver.remove();
@@ -38,10 +29,6 @@ public class Hooks {
     }
 
     public static WebDriver getDriver() {
-        if (driver.get() == null) {
-            throw new IllegalStateException("🚨 ERROR: WebDriver is not initialized!");
-        }
         return driver.get();
     }
 }
-

@@ -1,1 +1,5 @@
 /Users/adminjds/afteroffice/saucedemo/src/main/java/com/example/saucedemo/Main.java
+/Users/adminjds/afteroffice/saucedemo/src/main/java/com/example/saucedemo/abstractcomponents/AbstractComponent.java
+/Users/adminjds/afteroffice/saucedemo/src/main/java/com/example/saucedemo/pageobject/CheckOutPage.java
+/Users/adminjds/afteroffice/saucedemo/src/main/java/com/example/saucedemo/pageobject/LoginPage.java
+/Users/adminjds/afteroffice/saucedemo/src/main/java/com/example/saucedemo/pageobject/ProductsPage.java

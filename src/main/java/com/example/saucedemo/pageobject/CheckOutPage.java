@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import com.example.saucedemo.abstractcomponents.AbstractComponent;
 
 public class CheckOutPage extends AbstractComponent {
@@ -37,6 +38,13 @@ public class CheckOutPage extends AbstractComponent {
     @FindBy(css = "[data-test='complete-header']")
     private WebElement messageHeader;
 
+    @FindBy(css = "[data-test='inventory-item-name']")
+    private WebElement firstItemInCart;  // 🔹 Ambil item pertama di keranjang
+
+    public WebElement getFirstItemInCart() {
+        waitForElementVisibility(firstItemInCart);
+        return firstItemInCart;
+    }
     public void getButtonCheckout() {
         buttonCheckout.click();
     }

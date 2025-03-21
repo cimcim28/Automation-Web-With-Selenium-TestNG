@@ -1,25 +1,26 @@
 package automation;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.example.saucedemo.pageobject.LoginPage;
-import com.example.saucedemo.pageobject.ProductsPage;
+import hook.TestBase;
 
-import hook.Hooks;
-
-public class LoginTest extends Hooks {
-
+public class LoginTest extends TestBase {
     @Test
     public void testValidLogin() {
-        WebDriver driver = Hooks.getDriver();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginAuth("standard_user", "secret_sauce");
+        System.out.println("📌 Running testValidLogin...");
 
-        // Interaksi di ProductsPage
-        ProductsPage productsPage = new ProductsPage(driver);
-        Assert.assertEquals(productsPage.getPageTitle(), "Products");
-        
+        // 🔹 Lakukan login
+        loginPage.setEmail("standard_user");
+        loginPage.setPassword("secret_sauce");
+        loginPage.clickButtonLogin();
+
+        // 🔹 Verifikasi URL setelah login
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println("🔍 Current URL: " + currentUrl);
+        Assert.assertTrue(currentUrl.contains("inventory.html"), "❌ URL tidak sesuai setelah login!");
+
+        // 🔹 Verifikasi halaman berhasil masuk ke "Products"
+        String pageTitle = productsPage.getPageTitle();
+        Assert.assertEquals(pageTitle, "Products", "❌ Gagal masuk ke halaman Products!");
     }
 }

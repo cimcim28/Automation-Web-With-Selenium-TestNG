@@ -18,15 +18,33 @@ public class LoginPage extends AbstractComponent { // Extend AbstractComponent
     @FindBy(id = "login-button")
     private WebElement buttonLogin;
 
+    @FindBy(css = "[data-test='error']")
+    private WebElement errorMsg;
+
     public LoginPage(WebDriver driver) {
-        super(driver); // Inisialisasi AbstractComponent
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public void loginAuth(String email, String password) {
-        waitForElementVisibility(fieldEmail); // Gunakan method dari AbstractComponent
+    public void setEmail(String email) {
+        waitForElement(fieldEmail);
+        fieldEmail.clear();
         fieldEmail.sendKeys(email);
+    }
+
+    public void setPassword(String password) {
+        waitForElement(fieldPassword);
+        fieldPassword.clear();
         fieldPassword.sendKeys(password);
+    }
+
+    public void clickButtonLogin() {
+        waitForElement(buttonLogin);
         buttonLogin.click();
+    }
+
+    public String getErrorMsg() {
+        waitForElement(errorMsg);
+        return errorMsg.getText().trim();
     }
 }

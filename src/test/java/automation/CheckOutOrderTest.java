@@ -1,33 +1,28 @@
 package automation;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.example.saucedemo.pageobject.CheckOutPage;
-import com.example.saucedemo.pageobject.LoginPage;
-import com.example.saucedemo.pageobject.ProductsPage;
+import hook.TestBase;
 
-import hook.Hooks;
-
-public class CheckOutOrderTest extends Hooks {
+public class CheckOutOrderTest extends TestBase {
 
     @Test
     public void testCheckOutOrder() throws InterruptedException {
-        WebDriver driver = Hooks.getDriver();
+        System.out.println("📌 Running testCheckOutOrder...");
 
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginAuth("standard_user", "secret_sauce");
-
-        ProductsPage productsPage = new ProductsPage(driver);
-        Assert.assertEquals(productsPage.getPageTitle(), "Products", "Gagal membuka halaman Products");
-
+        loginPage.setEmail("standard_user");
+        loginPage.setPassword("secret_sauce");
+        loginPage.clickButtonLogin();
+        Assert.assertEquals("Products", productsPage.getPageTitle());
         String productName = "Sauce Labs Bike Light";
         productsPage.addToCart(productName);
+        System.out.println("✅ Produk " + productName + " ditambahkan ke keranjang.");
         productsPage.buttonCart.click();
-
-        CheckOutPage checkoutPage = new CheckOutPage(driver);
+        System.out.println("🛒 Navigasi ke halaman keranjang.");
+        checkoutPage.getButtonCheckout();
         checkoutPage.continueCheckOut("John", "Doe", "123456");
-        Assert.assertEquals(checkoutPage.getMessageHeader(), "Thank you for your order!", "Checkout gagal");
+        Assert.assertEquals("Thank you for your order!", checkoutPage.getMessageHeader());
+        System.out.println("✅ Checkout berhasil!");
     }
 }

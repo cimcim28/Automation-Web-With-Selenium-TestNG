@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="15.479" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-19T01:56:29.922637Z">
-<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="14.951">
+<testsuite name="Cucumber" time="10.25" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-21T08:04:24.211215Z">
+<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="9.966">
 <system-out><![CDATA[
 Given Buyer landing to ecommerce............................................passed
 Given Buyer logged to website...............................................passed

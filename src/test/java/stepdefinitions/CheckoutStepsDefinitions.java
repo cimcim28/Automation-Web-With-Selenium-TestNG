@@ -13,13 +13,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CheckoutSteps {
+public class CheckoutStepsDefinitions {
     WebDriver driver;
     LoginPage loginPage;
     ProductsPage productsPage;
     CheckOutPage checkoutPage;
 
-    public CheckoutSteps() {
+    public CheckoutStepsDefinitions() {
         this.driver = Hooks.getDriver();  // ✅ Ambil driver setelah Hooks siap
         this.loginPage = new LoginPage(driver);
         this.productsPage = new ProductsPage(driver);
@@ -33,8 +33,9 @@ public class CheckoutSteps {
 
     @Given("Buyer logged to website")
     public void buyer_logged_to_website() {
-        loginPage.loginAuth("standard_user", "secret_sauce");
-        Assert.assertEquals(productsPage.getPageTitle(), "Products", "Landing page gagal");
+        loginPage.setEmail("standard_user");
+        loginPage.setPassword("secret_sauce");
+        loginPage.clickButtonLogin();        Assert.assertEquals(productsPage.getPageTitle(), "Products", "Landing page gagal");
     }
 
     @When("Buyer add product to Cart and checkout")

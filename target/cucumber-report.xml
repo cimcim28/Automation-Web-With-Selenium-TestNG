@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="10.25" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-21T08:04:24.211215Z">
-<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="9.966">
+<testsuite name="Cucumber" time="20.823" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-03-21T23:17:56.835260Z">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.1" time="5.991">
 <system-out><![CDATA[
-Given Buyer landing to ecommerce............................................passed
-Given Buyer logged to website...............................................passed
-When Buyer add product to Cart and checkout.................................passed
-And Buyer add checkout information..........................................passed
-Then Buyer will see message overview order and on finish order..............passed
-Then Buyer confirmation page THANKYOU FOR THE ORDER.........................passed
+When i enter "" in field username...........................................passed
+And i enter "" in field password............................................passed
+And i click on login button.................................................passed
+Then System should display 'Epic sadface: Username is required' Error Message.passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.2" time="3.409">
+<system-out><![CDATA[
+When i enter "" in field username...........................................passed
+And i enter "test123" in field password.....................................passed
+And i click on login button.................................................passed
+Then System should display 'Epic sadface: Username is required' Error Message.passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.3" time="3.826">
+<system-out><![CDATA[
+When i enter "test" in field username.......................................passed
+And i enter "" in field password............................................passed
+And i click on login button.................................................passed
+Then System should display 'Epic sadface: Password is required' Error Message.passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.4" time="3.453">
+<system-out><![CDATA[
+When i enter "test" in field username.......................................passed
+And i enter "test123" in field password.....................................passed
+And i click on login button.................................................passed
+Then System should display 'Epic sadface: Username and password do not match any user in this service' Error Message.passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.5" time="3.838">
+<system-out><![CDATA[
+When i enter "locked_out_user" in field username............................passed
+And i enter "secret_sauce" in field password................................passed
+And i click on login button.................................................passed
+Then System should display 'Epic sadface: Sorry, this user has been locked out.' Error Message.passed
 ]]></system-out>
 </testcase>
 </testsuite>

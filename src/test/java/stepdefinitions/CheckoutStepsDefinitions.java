@@ -26,19 +26,25 @@ public class CheckoutStepsDefinitions {
         this.checkoutPage = new CheckOutPage(driver);
     }
 
-    @Given("Buyer landing to ecommerce")
-    public void buyer_landing_to_ecommerce() {
+    @Given("User navigates to application URL")
+    public void user_navigates_to_application_url() {
         driver.get("https://www.saucedemo.com/");
     }
 
-    @Given("Buyer logged to website")
+    @Given("the application has been launched")
+    public void application_success_launched() {
+        Assert.assertEquals(driver.getTitle(), "Swag Labs", "Landing page gagal");
+    }
+
+    @Given("User logged to website")
     public void buyer_logged_to_website() {
         loginPage.setEmail("standard_user");
         loginPage.setPassword("secret_sauce");
-        loginPage.clickButtonLogin();        Assert.assertEquals(productsPage.getPageTitle(), "Products", "Landing page gagal");
+        loginPage.clickButtonLogin();
+        Assert.assertEquals(productsPage.getPageTitle(), "Products", "Landing page gagal");
     }
 
-    @When("Buyer add product to Cart and checkout")
+    @When("User add product to Cart and checkout")
     public void buyer_add_product_to_cart() {
         productsPage.addToCart("Sauce Labs Bike Light");
         productsPage.waitForElementVisibility(productsPage.buttonCart);
@@ -46,17 +52,17 @@ public class CheckoutStepsDefinitions {
         checkoutPage.getButtonCheckout();
     }
 
-    @And("Buyer add checkout information")
+    @And("User add checkout information")
     public void buyer_add_checkout_information() {
         checkoutPage.continueCheckOut("John", "Doe", "123456");
     }
 
-    @Then("Buyer will see message overview order and on finish order")
+    @Then("User will see message overview order and on finish order")
     public void buyer_will_see_message_overview_order_and_on_finish_order(){
         Assert.assertEquals(checkoutPage.getMessageHeader(), "Thank you for your order!", "Checkout gagal");
     }
 
-    @Then("Buyer confirmation page THANKYOU FOR THE ORDER.")
+    @Then("User confirmation page THANKYOU FOR THE ORDER.")
     public void buyer_confirmation_page_thankyou_for_the_order() {
         System.out.println("Test berhasil: Pesanan telah selesai!");
     }

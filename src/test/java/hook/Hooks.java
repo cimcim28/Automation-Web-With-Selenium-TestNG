@@ -22,6 +22,7 @@ public class Hooks {
 
     @After
     public static void tearDown() {
+        System.out.println("🛑 Closing Cucumber setup...");
         if (driver.get() != null) {
             driver.get().quit();
             driver.remove();

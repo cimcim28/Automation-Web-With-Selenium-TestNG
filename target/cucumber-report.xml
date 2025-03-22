@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="41.183" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-03-22T01:22:55.908295Z">
-<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="6.996">
+<testsuite name="Cucumber" time="43.943" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-03-22T01:33:22.014660Z">
+<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="8.355">
 <system-out><![CDATA[
 Given the application has been launched.....................................passed
 Given User logged to website................................................passed
@@ -10,7 +10,7 @@ Then User will see message overview order and on finish order...............pass
 Then User confirmation page THANKYOU FOR THE ORDER..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.1" time="3.773">
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.1" time="3.84">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "standard_user" in field username..............................passed
@@ -19,7 +19,7 @@ And i click on login button.................................................pass
 Then System should display page header 'PRODUCTS'...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.2" time="3.676">
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.2" time="4.059">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "problem_user" in field username...............................passed
@@ -28,7 +28,7 @@ And i click on login button.................................................pass
 Then System should display page header 'PRODUCTS'...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.3" time="9.27">
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.3" time="8.847">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "performance_glitch_user" in field username....................passed
@@ -37,7 +37,7 @@ And i click on login button.................................................pass
 Then System should display page header 'PRODUCTS'...........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.1" time="3.46">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.1" time="4.256">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "" in field username...........................................passed
@@ -46,7 +46,7 @@ And i click on login button.................................................pass
 Then System should display 'Epic sadface: Username is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.2" time="3.302">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.2" time="3.593">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "" in field username...........................................passed
@@ -55,7 +55,7 @@ And i click on login button.................................................pass
 Then System should display 'Epic sadface: Username is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.3" time="3.519">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.3" time="3.699">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "test" in field username.......................................passed
@@ -64,7 +64,7 @@ And i click on login button.................................................pass
 Then System should display 'Epic sadface: Password is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.4" time="3.297">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.4" time="3.398">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "test" in field username.......................................passed
@@ -73,7 +73,7 @@ And i click on login button.................................................pass
 Then System should display 'Epic sadface: Username and password do not match any user in this service' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.5" time="3.526">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.5" time="3.415">
 <system-out><![CDATA[
 Given The application has been launched.....................................passed
 When i enter "locked_out_user" in field username............................passed

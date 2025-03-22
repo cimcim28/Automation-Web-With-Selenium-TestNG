@@ -1,19 +1,19 @@
 Feature: Successfully logged in
 
-# Background: User navigates to application URL
-# Given The application has been launched
+Background: User navigates to application URL
+Given The application has been launched
 
-# Scenario Outline: User should be able to login with valid credential
-# When i enter "<username>" in field username
-# And i enter "<password>" in field password
-# And i click on login button
-# Then System should display page header 'PRODUCTS'
+Scenario Outline: User should be able to login with valid credential
+When i enter "<username>" in field username
+And i enter "<password>" in field password
+And i click on login button
+Then System should display page header 'PRODUCTS'
 
-# Examples:
-# | username                  | password      |
-# | standard_user             | secret_sauce  |
-# | problem_user              | secret_sauce  |
-# | performance_glitch_user   | secret_sauce  |
+Examples:
+| username                  | password      |
+| standard_user             | secret_sauce  |
+| problem_user              | secret_sauce  |
+| performance_glitch_user   | secret_sauce  |
 
 Scenario Outline: User should not be able to login with invalid credential
 When i enter "<username>" in field username

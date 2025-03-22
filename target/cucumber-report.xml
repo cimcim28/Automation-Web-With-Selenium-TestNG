@@ -1,39 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="20.823" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-03-21T23:17:56.835260Z">
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.1" time="5.991">
+<testsuite name="Cucumber" time="41.183" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-03-22T01:22:55.908295Z">
+<testcase classname="Checkout the order from saucedemo" name="Create Order Positive Case" time="6.996">
 <system-out><![CDATA[
+Given the application has been launched.....................................passed
+Given User logged to website................................................passed
+When User add product to Cart and checkout..................................passed
+And User add checkout information...........................................passed
+Then User will see message overview order and on finish order...............passed
+Then User confirmation page THANKYOU FOR THE ORDER..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.1" time="3.773">
+<system-out><![CDATA[
+Given The application has been launched.....................................passed
+When i enter "standard_user" in field username..............................passed
+And i enter "secret_sauce" in field password................................passed
+And i click on login button.................................................passed
+Then System should display page header 'PRODUCTS'...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.2" time="3.676">
+<system-out><![CDATA[
+Given The application has been launched.....................................passed
+When i enter "problem_user" in field username...............................passed
+And i enter "secret_sauce" in field password................................passed
+And i click on login button.................................................passed
+Then System should display page header 'PRODUCTS'...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should be able to login with valid credential - #1.3" time="9.27">
+<system-out><![CDATA[
+Given The application has been launched.....................................passed
+When i enter "performance_glitch_user" in field username....................passed
+And i enter "secret_sauce" in field password................................passed
+And i click on login button.................................................passed
+Then System should display page header 'PRODUCTS'...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.1" time="3.46">
+<system-out><![CDATA[
+Given The application has been launched.....................................passed
 When i enter "" in field username...........................................passed
 And i enter "" in field password............................................passed
 And i click on login button.................................................passed
 Then System should display 'Epic sadface: Username is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.2" time="3.409">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.2" time="3.302">
 <system-out><![CDATA[
+Given The application has been launched.....................................passed
 When i enter "" in field username...........................................passed
 And i enter "test123" in field password.....................................passed
 And i click on login button.................................................passed
 Then System should display 'Epic sadface: Username is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.3" time="3.826">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.3" time="3.519">
 <system-out><![CDATA[
+Given The application has been launched.....................................passed
 When i enter "test" in field username.......................................passed
 And i enter "" in field password............................................passed
 And i click on login button.................................................passed
 Then System should display 'Epic sadface: Password is required' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.4" time="3.453">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.4" time="3.297">
 <system-out><![CDATA[
+Given The application has been launched.....................................passed
 When i enter "test" in field username.......................................passed
 And i enter "test123" in field password.....................................passed
 And i click on login button.................................................passed
 Then System should display 'Epic sadface: Username and password do not match any user in this service' Error Message.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.5" time="3.838">
+<testcase classname="Successfully logged in" name="User should not be able to login with invalid credential - #1.5" time="3.526">
 <system-out><![CDATA[
+Given The application has been launched.....................................passed
 When i enter "locked_out_user" in field username............................passed
 And i enter "secret_sauce" in field password................................passed
 And i click on login button.................................................passed

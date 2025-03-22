@@ -3,5 +3,6 @@
 /Users/adminjds/afteroffice/saucedemo/src/test/java/hook/Hooks.java
 /Users/adminjds/afteroffice/saucedemo/src/test/java/hook/TestBase.java
 /Users/adminjds/afteroffice/saucedemo/src/test/java/runners/TestRunner.java
+/Users/adminjds/afteroffice/saucedemo/src/test/java/runners/TestRunnerTestNg.java
 /Users/adminjds/afteroffice/saucedemo/src/test/java/stepdefinitions/CheckoutStepsDefinitions.java
 /Users/adminjds/afteroffice/saucedemo/src/test/java/stepdefinitions/LoginStepsDefinitions.java

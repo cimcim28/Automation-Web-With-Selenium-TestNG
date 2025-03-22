@@ -1,1 +1,5 @@
+com/example/saucedemo/pageobject/LoginPage.class
 com/example/saucedemo/Main.class
+com/example/saucedemo/abstractcomponents/AbstractComponent.class
+com/example/saucedemo/pageobject/ProductsPage.class
+com/example/saucedemo/pageobject/CheckOutPage.class

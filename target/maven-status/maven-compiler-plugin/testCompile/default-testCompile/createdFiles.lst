@@ -1,1 +1,8 @@
+runners/TestRunnerTestNg.class
+stepdefinitions/CheckoutStepsDefinitions.class
+runners/TestRunner.class
+hook/Hooks.class
+stepdefinitions/LoginStepsDefinitions.class
+automation/CheckOutOrderTest.class
 hook/TestBase.class
+automation/LoginTest.class

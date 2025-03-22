@@ -3,7 +3,6 @@
 <suite name="Automation Suite">
     <test name="Cucumber Tests">
         <classes>
-            <!-- <class name="automation.LoginTest"/> -->
             <!-- <class name="automation.CheckOutOrderTest"/> -->
             <class name="runners.TestRunnerTestNg"/>
         </classes>

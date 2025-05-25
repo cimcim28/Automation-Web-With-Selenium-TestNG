@@ -29,14 +29,15 @@ Fitur utama yang diuji:
    git clone https://github.com/username/repo-sauce-demo.git
    cd repo-sauce-demo
 
-Jalankan tes dengan Maven:
+3. Jalankan tes dengan Maven:
 mvn clean test
 
 ## Konfigurasi Browser
 
 Browser yang digunakan adalah Chrome dengan beberapa opsi ChromeDriver seperti:
 
-Nonaktifkan ekstensi
-Nonaktifkan autofill dan password manager
-Mengaktifkan mode automation
+1. Nonaktifkan ekstensi
+2. Nonaktifkan autofill dan password manager
+3. Mengaktifkan mode automation
+
 Pengaturan opsi ini ada di kelas Hooks.java

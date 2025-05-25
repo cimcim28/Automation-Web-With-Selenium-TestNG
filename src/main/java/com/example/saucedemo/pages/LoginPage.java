@@ -1,4 +1,4 @@
-package com.example.saucedemo.pageobject;
+package com.example.saucedemo.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.example.saucedemo.abstractcomponents.AbstractComponent;
 
-public class LoginPage extends AbstractComponent { // Extend AbstractComponent
+public class LoginPage extends AbstractComponent {
 
     @FindBy(css = "[data-test='username']")
-    private WebElement fieldEmail;
+    private WebElement fieldUsername;
 
     @FindBy(css = "[data-test='password']")
     private WebElement fieldPassword;
@@ -26,10 +26,10 @@ public class LoginPage extends AbstractComponent { // Extend AbstractComponent
         PageFactory.initElements(driver, this);
     }
 
-    public void setEmail(String email) {
-        waitForElement(fieldEmail);
-        fieldEmail.clear();
-        fieldEmail.sendKeys(email);
+    public void setUsername(String username) {
+        waitForElement(fieldUsername);
+        fieldUsername.clear();
+        fieldUsername.sendKeys(username);
     }
 
     public void setPassword(String password) {

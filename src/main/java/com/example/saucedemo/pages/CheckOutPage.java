@@ -1,4 +1,4 @@
-package com.example.saucedemo.pageobject;
+package com.example.saucedemo.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

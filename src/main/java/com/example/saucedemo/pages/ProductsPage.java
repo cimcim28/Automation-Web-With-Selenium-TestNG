@@ -1,4 +1,4 @@
-package com.example.saucedemo.pageobject;
+package com.example.saucedemo.pages;
 
 import java.util.List;
 

@@ -1,17 +1,17 @@
-package automation;
+package testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import hook.TestBase;
 
-public class CheckOutOrderTest extends TestBase {
+public class CheckoutTest extends TestBase {
 
     @Test
     public void testCheckOutOrder() throws InterruptedException {
         System.out.println("📌 Running testCheckOutOrder...");
 
-        loginPage.setEmail("standard_user");
+        loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         loginPage.clickButtonLogin();
         Assert.assertEquals("Products", productsPage.getPageTitle());

@@ -3,9 +3,9 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.example.saucedemo.pageobject.CheckOutPage;
-import com.example.saucedemo.pageobject.LoginPage;
-import com.example.saucedemo.pageobject.ProductsPage;
+import com.example.saucedemo.pages.CheckOutPage;
+import com.example.saucedemo.pages.LoginPage;
+import com.example.saucedemo.pages.ProductsPage;
 
 import hook.Hooks;
 import io.cucumber.java.en.And;
@@ -38,7 +38,7 @@ public class CheckoutStepsDefinitions {
 
     @Given("User logged to website")
     public void buyer_logged_to_website() {
-        loginPage.setEmail("standard_user");
+        loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
         loginPage.clickButtonLogin();
         Assert.assertEquals(productsPage.getPageTitle(), "Products", "Landing page gagal");

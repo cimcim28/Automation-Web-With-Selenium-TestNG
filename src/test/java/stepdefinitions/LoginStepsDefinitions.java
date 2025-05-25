@@ -3,8 +3,8 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.example.saucedemo.pageobject.LoginPage;
-import com.example.saucedemo.pageobject.ProductsPage;
+import com.example.saucedemo.pages.LoginPage;
+import com.example.saucedemo.pages.ProductsPage;
 
 import hook.Hooks;
 import io.cucumber.java.en.And;
@@ -31,7 +31,7 @@ public class LoginStepsDefinitions {
 
     @When("i enter {string} in field username")
     public void i_enter_in_field_username(String email) {
-        loginPage.setEmail(email);
+        loginPage.setUsername(email);
     }
 
     @And("i enter {string} in field password")

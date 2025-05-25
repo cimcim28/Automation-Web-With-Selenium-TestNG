@@ -39,26 +39,53 @@ public class CheckOutPage extends AbstractComponent {
     private WebElement messageHeader;
 
     @FindBy(css = "[data-test='inventory-item-name']")
-    private WebElement firstItemInCart;  // 🔹 Ambil item pertama di keranjang
+    private WebElement firstItemInCart;
+
+    @FindBy(css = "[data-test='error']")
+    private WebElement messageError;
+
 
     public WebElement getFirstItemInCart() {
         waitForElementVisibility(firstItemInCart);
         return firstItemInCart;
     }
-    public void getButtonCheckout() {
+    public void clickButtonCheckout() {
+        waitForElementVisibility(buttonCheckout);
         buttonCheckout.click();
     }
     public String getMessageHeader() {
+        waitForElementVisibility(messageHeader);
         return messageHeader.getText();
     }
 
-    public void continueCheckOut(String firstName, String lastName, String postalCode) {
+    public void inputFirstName(String firstName) {
         waitForElementVisibility(fieldFirstName);
         fieldFirstName.sendKeys(firstName);
+    }
+
+    public void inputLastName(String lastName) {
+        waitForElementVisibility(fieldLastName);
         fieldLastName.sendKeys(lastName);
+    }
+
+    public void inputPostalCode(String postalCode) {
+        waitForElementVisibility(fieldPostalCode);
         fieldPostalCode.sendKeys(postalCode);
+    }
+
+    public void clickContinueButton() {
+        waitForElementVisibility(buttonContinue);
         buttonContinue.click();
+    }
+
+    public void clickFinishButton() {
         waitForElementVisibility(buttonFinish);
         buttonFinish.click();
     }
+
+    public String getMsgError() {
+        waitForElementVisibility(messageError);
+        return messageError.getText();
+    }
+    
 }

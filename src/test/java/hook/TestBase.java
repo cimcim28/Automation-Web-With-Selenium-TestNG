@@ -1,6 +1,7 @@
 package hook;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -24,6 +25,12 @@ public class TestBase {
         this.loginPage = new LoginPage(driver);
         this.productsPage = new ProductsPage(driver);
         this.checkoutPage = new CheckOutPage(driver);
+
+        loginPage.setUsername("standard_user");
+        loginPage.setPassword("secret_sauce");
+        loginPage.clickButtonLogin();
+        Assert.assertEquals("Products", productsPage.getPageTitle());
+
     }
 
     @AfterMethod

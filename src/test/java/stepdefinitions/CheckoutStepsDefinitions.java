@@ -49,12 +49,16 @@ public class CheckoutStepsDefinitions {
         productsPage.addToCart("Sauce Labs Bike Light");
         productsPage.waitForElementVisibility(productsPage.buttonCart);
         productsPage.buttonCart.click();
-        checkoutPage.getButtonCheckout();
+        checkoutPage.clickButtonCheckout();
     }
 
     @And("User add checkout information")
     public void buyer_add_checkout_information() {
-        checkoutPage.continueCheckOut("John", "Doe", "123456");
+        checkoutPage.inputFirstName("John");
+        checkoutPage.inputLastName("Doe");
+        checkoutPage.inputPostalCode("12345");
+        checkoutPage.clickContinueButton();
+        checkoutPage.clickFinishButton();
     }
 
     @Then("User will see message overview order and on finish order")

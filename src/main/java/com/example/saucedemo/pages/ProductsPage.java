@@ -62,4 +62,8 @@ public class ProductsPage extends AbstractComponent {
     }
     System.out.println("❌ Produk '" + productName + "' tidak ditemukan.");
     }
+
+    public void open() {
+        driver.get("https://www.saucedemo.com/inventory.html");
+    }
 }

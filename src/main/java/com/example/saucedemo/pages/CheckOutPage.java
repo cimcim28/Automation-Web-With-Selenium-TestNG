@@ -9,12 +9,13 @@ import com.example.saucedemo.abstractcomponents.AbstractComponent;
 
 public class CheckOutPage extends AbstractComponent {
 
+    @SuppressWarnings("unused")
     WebDriver driver;
 
     public CheckOutPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver, this); // ✅ INISIALISASI PAGE FACTORY
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(css = "[data-test='firstName']")

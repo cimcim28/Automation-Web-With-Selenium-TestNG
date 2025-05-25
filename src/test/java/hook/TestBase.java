@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.example.saucedemo.pages.CartPage;
 import com.example.saucedemo.pages.CheckOutPage;
 import com.example.saucedemo.pages.LoginPage;
 import com.example.saucedemo.pages.ProductsPage;
@@ -14,6 +15,7 @@ public class TestBase {
     protected LoginPage loginPage;
     protected ProductsPage productsPage;
     protected CheckOutPage checkoutPage;
+    protected CartPage cartPage;
 
     @BeforeMethod
     public void setUp() {
@@ -25,6 +27,7 @@ public class TestBase {
         this.loginPage = new LoginPage(driver);
         this.productsPage = new ProductsPage(driver);
         this.checkoutPage = new CheckOutPage(driver);
+        this.cartPage = new CartPage(driver);
 
         loginPage.setUsername("standard_user");
         loginPage.setPassword("secret_sauce");
